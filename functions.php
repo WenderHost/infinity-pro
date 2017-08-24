@@ -48,6 +48,11 @@ define( 'CHILD_THEME_VERSION', '1.1.2' );
 // Enqueue scripts and styles.
 add_action( 'wp_enqueue_scripts', 'infinity_enqueue_scripts_styles' );
 function infinity_enqueue_scripts_styles() {
+	//* Remove default style.css, add /lib/main.css
+	$handle  = defined( 'CHILD_THEME_NAME' ) && CHILD_THEME_NAME ? sanitize_title_with_dashes( CHILD_THEME_NAME ) : 'child-theme';
+	wp_deregister_style( $handle );
+	$main_css_version = ( file_exists( get_stylesheet_directory() . '/lib/css/main.css' ) )? filemtime( get_stylesheet_directory() . '/lib/css/main.css' ) : get_bloginfo( 'version' );
+	wp_enqueue_style( $handle, get_bloginfo( 'stylesheet_directory' ) . '/lib/css/main.css', false, $main_css_version );
 
 	wp_enqueue_style( 'infinity-fonts', '//fonts.googleapis.com/css?family=Cormorant+Garamond:400,400i,700|Raleway:700', array(), CHILD_THEME_VERSION );
 	wp_enqueue_style( 'infinity-ionicons', '//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css', array(), CHILD_THEME_VERSION );
@@ -95,7 +100,7 @@ add_theme_support( 'genesis-responsive-viewport' );
 
 // Add support for custom header.
 add_theme_support( 'custom-header', array(
-	'width'           => 400,
+	'width'           => 800,
 	'height'          => 130,
 	'header-selector' => '.site-title a',
 	'header-text'     => false,
