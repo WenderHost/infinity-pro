@@ -22,6 +22,9 @@ include_once( get_stylesheet_directory() . '/lib/helper-functions.php' );
 // Include customizer CSS.
 include_once( get_stylesheet_directory() . '/lib/output.php' );
 
+// Include Genesis overrides
+include_once( get_stylesheet_directory() . '/lib/genesis.php' );
+
 // Add image upload and color select to theme customizer.
 require_once( get_stylesheet_directory() . '/lib/customize.php' );
 
