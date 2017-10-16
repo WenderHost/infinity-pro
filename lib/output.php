@@ -90,6 +90,10 @@ function infinity_css() {
 			color: %2$s;
 		}
 
+		.front-page-3 a.button.clear{
+			background-color: transparent;
+		}
+
 		', $color_accent, infinity_color_contrast( $color_accent ) ) : '';
 
 	if ( $css ) {
