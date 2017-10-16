@@ -1,6 +1,11 @@
 /* Defaults
 ---------------------------------------------------------------------------------------------------- */
 
+/* Variables
+ --------------------------------------------- */
+@primarycolor: #206d13; /*#206d13;*/
+
+
 /* Typographical Elements
 --------------------------------------------- */
 
@@ -329,7 +334,7 @@ input[type="select"],
 input[type="submit"],
 .button {
   background-color: #d43c67;
-  border: 0;
+  border: 2px solid @primarycolor;
   border-radius: 0;
   color: #fff;
   cursor: pointer;
@@ -345,13 +350,18 @@ input[type="submit"],
   text-transform: uppercase;
   white-space: normal;
   width: auto;
+
+  &.large {
+    font-size: 12px;
+    font-size: 1.2rem;
+    padding: 20px 30px;
+  }
+
+  &.clear{
+    background-color: transparent;
+  }
 }
 
-.button.large {
-  font-size: 12px;
-  font-size: 1.2rem;
-  padding: 20px 30px;
-}
 
 .landing-page .button.large,
 .lead-capture-page .button.large {
