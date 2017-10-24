@@ -24,7 +24,7 @@ function infinity_front_page_genesis_meta() {
 		add_action( 'wp_enqueue_scripts', 'infinity_enqueue_front_script_styles', 1 );
 		function infinity_enqueue_front_script_styles() {
 
-			wp_enqueue_script( 'infinity-front-scripts', get_stylesheet_directory_uri() . '/js/front-page.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+			wp_enqueue_script( 'infinity-front-scripts', get_stylesheet_directory_uri() . '/js/front-page.js', ['jquery', 'infinity-match-height'], CHILD_THEME_VERSION, true );
 
 		}
 
@@ -51,14 +51,21 @@ function infinity_front_page_genesis_meta() {
 		remove_theme_support( 'genesis-footer-widgets' );
 
 		// Add front page widgets.
-		add_action( 'genesis_loop', 'infinity_front_page_widgets' );
+		add_action( 'genesis_loop', 'infinity_front_page_widgets_01', 10 );
+		add_action( 'genesis_loop', 'infinity_front_page_html_includes', 15 );
+		add_action( 'genesis_loop', 'infinity_front_page_widgets_02', 20 );
 
 	}
 
 }
 
+function infinity_front_page_html_includes(){
+	include_once( dirname(__FILE__) . '/lib/html/front-page-photos.html' );
+	include_once( dirname(__FILE__) . '/lib/html/front-page-video.html' );
+}
+
 // Add markup for front page widgets.
-function infinity_front_page_widgets() {
+function infinity_front_page_widgets_01() {
 
 	echo '<h2 class="screen-reader-text">' . __( 'Main Content', 'infinity-pro' ) . '</h2>';
 
@@ -86,7 +93,9 @@ function infinity_front_page_widgets() {
 		'before' => '<div id="front-page-5" class="front-page-5"><div class="image-section flexible-widgets widget-area fadeup-effect' . infinity_widget_area_class( 'front-page-5' ) . '"><div class="wrap">',
 		'after'  => '</div></div></div>',
 	) );
+}
 
+function infinity_front_page_widgets_02(){
 	// Add entry-title filter.
 	add_filter( 'genesis_featured_page_title', 'infinity_title' );
 
@@ -108,7 +117,6 @@ function infinity_front_page_widgets() {
 		'before' => '<div id="front-page-7" class="front-page-7"><div class="image-section flexible-widgets widget-area fadeup-effect' . infinity_widget_area_class( 'front-page-7' ) . '"><div class="wrap">',
 		'after'  => '</div></div></div>',
 	) );
-
 }
 
 // Modify the entry title text.
