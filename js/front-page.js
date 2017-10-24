@@ -116,4 +116,7 @@
 
 	$( '.front-page-6 .featuredpage .entry-content' ).prev( '.entry-header' ).addClass( 'position-top' );
 
+	// Match heights of Our Process section
+	$( '#front-page-4 .wrap section .content-box').matchHeight();
+
 })( jQuery );
