@@ -54,7 +54,8 @@ function infinity_front_page_genesis_meta() {
 		add_action( 'genesis_loop', 'infinity_front_page_widgets_01', 10 );
 		add_action( 'genesis_loop', 'infinity_front_page_html_includes', 15 );
 		add_action( 'genesis_loop', 'infinity_front_page_widgets_02', 20 );
-
+		add_action( 'genesis_loop', 'infinity_front_page_news', 25 );
+		add_action( 'genesis_loop', 'infinity_front_page_widgets_03', 30 );
 	}
 
 }
@@ -62,6 +63,10 @@ function infinity_front_page_genesis_meta() {
 function infinity_front_page_html_includes(){
 	include_once( dirname(__FILE__) . '/lib/html/front-page-photos.html' );
 	include_once( dirname(__FILE__) . '/lib/html/front-page-video.html' );
+}
+
+function infinity_front_page_news(){
+	include_once( dirname(__FILE__) . '/lib/php/front-page-news.php' );
 }
 
 // Add markup for front page widgets.
@@ -112,7 +117,9 @@ function infinity_front_page_widgets_02(){
 
 	// Remove team-member class.
 	remove_filter( 'genesis_attr_entry', 'infinity_widget_entry_open' );
+}
 
+function infinity_front_page_widgets_03(){
 	genesis_widget_area( 'front-page-7', array(
 		'before' => '<div id="front-page-7" class="front-page-7"><div class="image-section flexible-widgets widget-area fadeup-effect' . infinity_widget_area_class( 'front-page-7' ) . '"><div class="wrap">',
 		'after'  => '</div></div></div>',
