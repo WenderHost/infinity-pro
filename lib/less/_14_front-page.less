@@ -580,7 +580,13 @@ Loaded on the front page */
 	border: none;
 	color: #000;
 }
-
+.front-page-7{
+  section{
+    &:nth-child(3) .textwidget{
+      text-align: left;
+    }
+  }
+}
 
 /* Flexible Widgets
 ---------------------------------------------------------------------------------------------------- */
@@ -625,7 +631,40 @@ Loaded on the front page */
 	clear: left;
 }
 
+/* Front Page Photos
+---------------------------------------------------------------------------------------------------- */
+.front-page-photos{
+	display: flex;
+	height: 500px;
 
+	.photo{
+		flex-grow: 1;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+
+		&:nth-child(1){
+			background-color: #eee;
+			background-image: url(../../images/front-page-03.jpg);
+		}
+		&:nth-child(2){
+			background-color: #aaa;
+			background-image: url(../../images/front-page-01.jpg);
+		}
+		&:nth-child(3){
+			background-color: #ccc;
+			background-image: url(../../images/front-page-02.jpg);
+		}
+	}
+
+}
+
+/* Front Page Video
+---------------------------------------------------------------------------------------------------- */
+.front-page-video{
+	padding: 200px;
+	background-color: #eee;
+}
 /* Content Boxes
 ---------------------------------------------------------------------------------------------------- */
 
