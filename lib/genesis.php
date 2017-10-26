@@ -41,3 +41,8 @@ function footer_disclaimer(){
 <?php
 }
 add_action( 'genesis_footer', __NAMESPACE__ . '\\footer_disclaimer', 9 );
+
+function investor_access(){
+    ?><a href="https://investoraccess.rjf.com" class="button investor-access" target="_blank">Investor Access</a><?php
+}
+add_action( 'genesis_header', __NAMESPACE__ . '\\investor_access', 13 );
