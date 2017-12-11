@@ -156,6 +156,13 @@ Loaded on the front page */
 	table-layout: fixed;
 	text-align: center;
 	width: 100%;
+
+	a.button{
+		@media only screen and (max-width : 477px) {
+			display: block;
+			margin-bottom: 8px;
+		}
+	}
 }
 
 .front-page-1 .widget-area {
@@ -461,6 +468,10 @@ Loaded on the front page */
 		margin: 0 auto 30px auto;
 		max-width: 70%;
 
+		@media only screen and (max-width : 477px) {
+			max-width: 100%;
+		}
+
 		li{
 			list-style-type: disc;
 			margin-left: 40px;
@@ -666,6 +677,17 @@ Loaded on the front page */
 		&:nth-child(3){
 			background-color: #ccc;
 			background-image: url(../../images/front-page-02.jpg);
+		}
+	}
+
+	@media only screen and (max-width : 477px) {
+		display: block;
+		height: auto;
+
+		.photo{
+			flex-grow: unset;
+			height: 300px;
+			display: block;
 		}
 	}
 

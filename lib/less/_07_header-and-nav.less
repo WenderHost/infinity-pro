@@ -87,11 +87,36 @@
 
 /* Site Navigation
 ---------------------------------------------------------------------------------------------------- */
-.investor-access{
+.button.investor-access{
   position: absolute;
   right: 20px;
   top: 22px;
+
+  @media screen and (max-width: 800px) {
+    position: relative;
+    right: 0;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+    color: @primarycolor;
+    border: none;
+
+    &::after{
+      display: inline-block;
+      font-family: Ionicons;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      content: '\f39c';
+      margin-left: 4px;
+      margin-top: -2px;
+      font-size: 14px;
+      vertical-align: middle;
+    }
+  }
 }
+
 
 .genesis-nav-menu {
   clear: both;
