@@ -24,7 +24,7 @@ add_filter( 'genesis_seo_title', __NAMESPACE__ . '\\svg_logo_in_title', 10, 3 );
 //* Change the footer text
 
 function footer_creds_filter( $creds ) {
-    $creds = '&copy; Copyright ' . date( 'Y' ) . ' ' . get_bloginfo( 'name' ) . '. All rights reserved. &middot; Designed by <a href="https://mwender.com">Michael Wender</a>';
+    $creds = '&copy; Copyright ' . date( 'Y' ) . ' ' . get_bloginfo( 'name' ) . '. All rights reserved. &middot; Design/Hosting by <a href="https://wenderhost.com">WenderHost</a>';
     return $creds;
 }
 add_filter( 'genesis_footer_creds_text', __NAMESPACE__ . '\\footer_creds_filter' );
@@ -37,6 +37,10 @@ function footer_disclaimer(){
 <p>Links are being provided for information purposes only. Raymond James is not affiliated with and does not endorse, authorize or sponsor any of the listed websites or their respective sponsors. Raymond James is not responsible for the content of any website or the collection or use of information regarding any website's users and/or members.</p>
 
 <p>Investment advisory services offered through Raymond James Financial Services Advisors, Inc. Marzolf Investment Group, LLC is not a registered broker/dealer and is independent of Raymond James Financial Services.</p>
+
+<p style="text-align: center;">Securities offered through Raymond James Financial Services, Inc. Member <a href="https://www.finra.org" target="_blank">FINRA</a>/<a href="https://www.sipc.org" target="_blank">SIPC</a>.</p>
+
+<p style="text-align: center;"> <a href="https://brokercheck.finra.org" target="_blank">BrokerCheck</a> (Jeff Marzolf, CRD#: 1946939, Raymond James Financial Services, Inc.) </p>
 </div>
 <?php
 }

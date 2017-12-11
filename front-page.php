@@ -62,7 +62,7 @@ function infinity_front_page_genesis_meta() {
 
 function infinity_front_page_html_includes(){
 	include_once( dirname(__FILE__) . '/lib/html/front-page-photos.html' );
-	include_once( dirname(__FILE__) . '/lib/html/front-page-video.html' );
+	include_once( dirname(__FILE__) . '/lib/php/front-page-video.php' );
 }
 
 function infinity_front_page_news(){

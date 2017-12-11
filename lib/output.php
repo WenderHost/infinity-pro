@@ -90,8 +90,9 @@ function infinity_css() {
 			color: %2$s;
 		}
 
+		.front-page-1 a.button.clear,
 		.front-page-3 a.button.clear{
-			background-color: transparent;
+			background-color: rgba(0,0,0,0.5);
 		}
 
 		', $color_accent, infinity_color_contrast( $color_accent ) ) : '';

@@ -12,7 +12,9 @@
                 <h3>Email Newsletter Signup</h3>
                 <p>Sign up below to receive all of our news posts via email:</p>
                 <?php
-                gravity_form(3,false,false);
+                //gravity_form(3,false,false);
+                $form_widget = new \MailPoet\Form\Widget();
+                echo $form_widget->widget(array('form' => 1, 'form_type' => 'php'));
                 ?>
                 </div>
             </section>
@@ -25,9 +27,13 @@
                         'posts_per_page' => 5,
                     ];
                     $posts_array = get_posts( $args );
-                    foreach( $posts_array as $post ) : setup_postdata( $post ); ?>
-                    <li><a href="<?= the_permalink() ?>"><?= the_title() ?></a></li>
-                    <?php endforeach; wp_reset_postdata(); ?>
+                    foreach( $posts_array as $post ){
+                    ?>
+                        <li><a href="<?= get_the_permalink( $post->ID ) ?>"><?= get_the_title( $post->ID ) ?></a></li>
+                    <?php
+                    }
+                    wp_reset_postdata();
+                    ?>
                     </ul>
                 </div>
             </section>
