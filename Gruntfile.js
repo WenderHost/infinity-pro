@@ -68,7 +68,7 @@ module.exports = function(grunt) {
           ]
         },
         options: {
-          proxy: "marzolf.dev",
+          proxy: "marzolf.test",
           watchTask: true
         }
       }
