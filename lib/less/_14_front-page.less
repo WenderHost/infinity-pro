@@ -609,6 +609,20 @@ Loaded on the front page */
 			font-size: 3.5rem;
 		}
 	}
+
+	.widget-centered{
+		.widget_text:last-child{
+			max-width: 640px;
+			margin: 0 auto;
+
+			h3.title,p.caption{
+				text-align: center;
+			}
+			#mailpoet_form_1 .mailpoet_text, #mailpoet_form_1 .mailpoet_textarea{
+				width: 98%;
+			}
+		}
+	}
 }
 
 /* Flexible Widgets
@@ -698,6 +712,10 @@ Loaded on the front page */
 .front-page-video{
 	padding: 200px 200px 180px 200px;
 	background-color: #eee;
+
+	@media screen and (max-width: 1260px) {
+	    padding: 40px 20px;
+	}
 }
 /* Content Boxes
 ---------------------------------------------------------------------------------------------------- */
