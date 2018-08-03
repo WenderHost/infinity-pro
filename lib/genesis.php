@@ -40,7 +40,7 @@ function footer_disclaimer(){
 
 <p style="text-align: center;">Securities offered through Raymond James Financial Services, Inc. Member <a href="https://www.finra.org" target="_blank">FINRA</a>/<a href="https://www.sipc.org" target="_blank">SIPC</a>.</p>
 
-<p style="text-align: center;"> <a href="https://brokercheck.finra.org" target="_blank">BrokerCheck</a> (Jeff Marzolf, CRD#: 1946939, Raymond James Financial Services, Inc.) </p>
+<p style="text-align: center;"> <a href="https://brokercheck.finra.org" target="_blank">BrokerCheck</a> (Jeff Marzolf, CRD#: 1946939, Raymond James Financial Services, Inc.) &middot; <a href="https://www.raymondjames.com/privacy-security-and-account-protection" target="_blank">Privacy Policy</a></p>
 </div>
 <?php
 }
